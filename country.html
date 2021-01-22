@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="./customStyle.css">
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
+    <link href='https://css.gg/pen.css' rel='stylesheet'>
+    <link href='https://css.gg/arrow-down.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="loadData()">
+    <div id="form" class="first-page">
+        <label class="page-info">ŠALYS</label>
+        <button onclick="openAddModal()" id="add-country" class="shadowing">+</button>
+        <div class="filter-actions">
+            <form class="search-filter">
+                <input id="search" class="search shadowing" type="text" name="text">
+                <button onclick="searchByInput()"> <i class="fa fa-search"></i></button>
+            </form>
+            <form>
+                <input id="date" class="data-filter shadowing" type="date" name="date">
+                <button class="dateBtn" onclick="filterDate()"><i class="gg-arrow-down"></i></button>
+            </form>
+        </div>
+        <div class="table-container shadowing">
+            <table id="country-table">
+                <thead>
+                    <tr id="header">
+                        <th id="sort" onclick="sort()">PAVADINIMAS</th>
+                        <th>UŽIMAMAS PLOTAS</th>
+                        <th>GYVENTOJŲ SKAIČIUS</th>
+                        <th>ŠALIES TEL. KODAS</th>
+                        <th>VEIKSMAI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="formModal" class="modal">
+        <div class="modal-content shadowing">
+            <span class="close">&times;</span>
+            <form id="update-form">
+                <h3 id="modal-info"></h3>
+                <fieldset class="rounded">
+                    <legend>Pavadinimas</legend>
+                    <div class="form-group">
+                        <input id="name" name="name" type="text" class="modal-input" />
+                    </div>
+                </fieldset>
+                <fieldset class="rounded">
+                    <legend>Užimamas plotas</legend>
+                    <div class="form-group">
+                        <input id="area" name="area" type="text" class="modal-input" />
+                    </div>
+                </fieldset>
+                <fieldset class="rounded">
+                    <legend>Gyventojų skaičius</legend>
+                    <div class="form-group">
+                        <input id="pop" name="pop" type="text" class="modal-input" />
+                    </div>
+                </fieldset>
+                <fieldset class="rounded">
+                    <legend>Šalies tel. kodas</legend>
+                    <div class="form-group">
+                        <input id="call_code" name="call_code" type="text" class="modal-input" />
+                    </div>
+                </fieldset>
+                <input class="modal-btn shadowing" id="confirm-update" type="button" onclick="updateCountry()"
+                    value="ATNAUJINTI">
+                <input class="modal-btn shadowing" id="confirm-add" type="button" onclick="addCountry()"
+                    value="SAUGOTI">
+            </form>
+        </div>
+    </div>
+    <script src="./pagination.js"></script>
+    <script src="./country.js"></script>
+</body>
+
+</html>
