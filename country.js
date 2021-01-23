@@ -268,7 +268,7 @@ function populateTable(data) {
         pagination.setAttribute('id', 'pageNavPosition');
         pagination.setAttribute('class', 'pager-nav');
         form.appendChild(pagination);
-        pager = new Pager('country-table', 5);
+        pager = new Pager('country-table', 10);
         pager.init();
         pager.showPageNav('pager', 'pageNavPosition');
         pager.showPage(1);
